@@ -55,7 +55,7 @@ main {
 
 /* 聊天容器样式 */
 .chat-container {
-    background-color: white;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -74,6 +74,34 @@ main {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background-color: #f9f5ff;
+}
+
+/* 用户消息样式 */
+.message.user-message {
+    align-self: flex-end;
+    background-color: #e3f2fd;
+    border-radius: 18px 18px 0 18px;
+    padding: 12px 16px;
+    max-width: 70%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* AI消息样式 */
+.message.ai-message {
+    align-self: flex-start;
+    background-color: #f3e5ff;
+    border-radius: 18px 18px 18px 0;
+    padding: 12px 16px;
+    max-width: 70%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 消息内容样式 */
+.message-content {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 /* 自定义滚动条 */
@@ -148,28 +176,33 @@ main {
 .input-area {
     display: flex;
     padding: 15px;
-    background-color: #f9f9f9;
-    border-top: 1px solid #eaeaea;
+    background-color: #f3e5ff;
+    border-radius: 18px;
+    margin: 0 20px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     align-items: center;
 }
 
 #userInput {
     flex: 1;
-    border: 1px solid #ddd;
-    border-radius: 24px;
-    padding: 12px 20px;
+    border: none;
+    border-radius: 18px;
+    padding: 12px 16px;
     font-size: 1rem;
     resize: none;
     outline: none;
-    transition: border-color 0.3s;
+    background-color: white;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    max-width: none;
 }
 
 #userInput:focus {
-    border-color: #2575fc;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
 }
 
 #sendBtn {
-    background-color: #2575fc;
+    background-color: #6a11cb;
     color: white;
     border: none;
     border-radius: 50%;
@@ -180,11 +213,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
+    transition: all 0.2s;
 }
 
 #sendBtn:hover {
-    background-color: #1a68e5;
+    background-color: #2575fc;
+    transform: scale(1.05);
 }
 
 #sendBtn i {
@@ -260,14 +294,17 @@ footer {
     
     .input-area {
         padding: 10px;
+        margin: 0 10px 10px;
+        border-radius: 12px;
     }
     
     #userInput {
-        padding: 10px 15px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
     }
     
     #sendBtn {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
     }
 }

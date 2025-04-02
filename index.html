@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Coach - 你的个人成长助手</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 添加字体图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 页面头部区域 -->
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-brain"></i> Life Coach</h1>
+            <p>你的个人成长伙伴，随时为你提供建议和指导</p>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <div class="container">
+            <!-- 聊天界面 -->
+            <div class="chat-container">
+                <!-- 聊天历史记录区域 -->
+                <div class="chat-history" id="chatHistory">
+                    <!-- 欢迎消息 -->
+                    <div class="message ai-message">
+                        <div class="message-content">
+                            <p>你好！我是你的Life Coach。我可以帮助你解决生活、学习或工作中的问题，给你提供建议和指导。请告诉我你想聊些什么？</p>
+                        </div>
+                    </div>
+                    <!-- 聊天消息将动态添加到这里 -->
+                </div>
+                
+                <!-- 输入区域 -->
+                <div class="input-area">
+                    <textarea id="userInput" placeholder="输入你的问题或想法..." rows="2"></textarea>
+                    <button id="sendBtn" title="发送"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                
+                <!-- 加载指示器 -->
+                <div class="loading-indicator" id="loadingIndicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer>
+        <div class="container">
+            <p>© 2023 Life Coach. 基于火山方舟DeepSeek R1 API构建。</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="js/chat.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

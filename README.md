@@ -42,10 +42,26 @@
 - 前端：HTML5、CSS3、JavaScript
 - 后端：Node.js (处理API请求和CORS问题)
 - API：火山方舟DeepSeek R1 API
+- 环境变量：使用dotenv管理本地开发环境变量，Vercel环境变量用于生产环境
 
 ## 使用说明
-1. 启动后端服务：`node server/server.js`或`npm run dev`
-2. 服务器将在http://localhost:3002上运行
-3. 在浏览器中打开index.html或通过本地服务器访问
-4. 在聊天框中输入问题或需求
-5. 等待AI回复并继续对话
+
+### 本地开发环境配置
+1. 复制`.env.example`文件并重命名为`.env`
+2. 在`.env`文件中填入你的火山方舟API密钥
+3. 安装依赖：`npm install`
+4. 启动后端服务：`node server/server.js`或`npm run dev`
+5. 服务器将在http://localhost:3002上运行
+6. 在浏览器中打开index.html或通过本地服务器访问
+7. 在聊天框中输入问题或需求
+8. 等待AI回复并继续对话
+
+### Vercel部署配置
+1. 在Vercel项目设置中，找到「Environment Variables」选项
+2. 添加以下环境变量：
+   - `VOLCENGINE_API_KEY`: 你的火山方舟API密钥
+   - `VOLCENGINE_API_ENDPOINT`: API端点地址（默认为https://ark.cn-beijing.volces.com/api/v3/chat/completions）
+3. 保存环境变量设置
+4. 重新部署项目
+
+注意：请确保不要在代码中硬编码API密钥，始终使用环境变量来保护敏感信息。

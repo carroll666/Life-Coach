@@ -108,8 +108,8 @@ class ChatManager {
         aiMessageDiv.appendChild(contentDiv);
         this.chatHistory.appendChild(aiMessageDiv);
         
-        // 发送请求到后端服务
-        fetch('http://localhost:3002/chat', {
+        // 发送请求到后端服务（自动适应当前域名）
+        fetch('/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

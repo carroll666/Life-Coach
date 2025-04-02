@@ -3,6 +3,11 @@
  * 负责处理与火山方舟DeepSeek R1 API的通信，并解决CORS问题
  */
 
+// 加载环境变量（本地开发环境）
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 // 导入所需模块
 const express = require('express');
 const cors = require('cors');
@@ -20,10 +25,10 @@ app.use(bodyParser.json()); // 解析JSON请求体
 // 提供静态文件服务
 app.use(express.static('.')); // 使用当前工作目录（项目根目录）
 
-// API密钥
-const API_KEY = 'bfa7609c-a5ec-4d2f-b28f-64b5b986a618';
+// 从环境变量获取API密钥和端点
+const API_KEY = process.env.VOLCENGINE_API_KEY;
 // API端点
-const API_ENDPOINT = 'https://ark.cn-beijing.volces.com/api/v3/chat/completions';
+const API_ENDPOINT = process.env.VOLCENGINE_API_ENDPOINT || 'https://ark.cn-beijing.volces.com/api/v3/chat/completions';
 
 // 系统提示信息（定义AI的角色和行为）
 const SYSTEM_PROMPT = `你是一位专业的Life Coach，你的目标是通过对话帮助用户成长和进步。
